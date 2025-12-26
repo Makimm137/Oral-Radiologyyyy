@@ -29,7 +29,6 @@ body{
   box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
 
-/* ★ 新增：次数显示 */
 .stat{
   text-align:center;
   font-size:18px;
@@ -51,7 +50,7 @@ body{
 .meaning{
   margin-top:26px;
   font-size:32px;
-  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
   text-align:center;
   background:#fafafa;
   border-radius:22px;
@@ -74,6 +73,7 @@ body{
 .prev{background:#e5e5ea}
 .unknown{background:#ff9f0a;color:#fff}
 .known{background:#007aff;color:#fff}
+
 .footer{
   margin-top:28px;
   display:flex;
@@ -83,7 +83,7 @@ body{
   color:#6e6e73;
 }
 
-  /* ===== 悬浮窗 ===== */
+/* ===== 悬浮窗 ===== */
 .modal{
   position:fixed;
   inset:0;
@@ -135,7 +135,6 @@ td.cn{
   font-family:"Microsoft YaHei","PingFang SC",sans-serif;
 }
 
-  
 @media(max-width:600px){
   .word{font-size:52px}
   .meaning{font-size:26px}
@@ -147,7 +146,6 @@ td.cn{
 <div class="container">
 <div class="card">
 
-<!-- ★ 新增：显示次数 -->
 <div id="stat" class="stat"></div>
 
 <div id="word" class="word"></div>
@@ -163,6 +161,7 @@ td.cn{
 <div class="footer">
   <div>待背：<span id="todo"></span> ｜ 已背：<span id="done"></span></div>
   <div>
+    <button onclick="openModal()">📋 查看所有单词</button>
     <button onclick="exportProgress()">📤 导出进度</button>
     <button onclick="importProgress()">📥 导入进度</button>
     <input type="file" id="importFile" accept=".json" style="display:none">
@@ -172,7 +171,7 @@ td.cn{
 </div>
 </div>
 
-  <!-- ===== 悬浮窗 ===== -->
+<!-- ===== 悬浮窗 ===== -->
 <div id="modal" class="modal" onclick="closeModal(event)">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">✖</span>
